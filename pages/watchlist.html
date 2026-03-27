@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Watchlists</title>
+
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/components/Navbar.css" />
+    <link rel="stylesheet" href="../styles/components/Button.css" />
+    <link rel="stylesheet" href="../styles/components/Imbd-rating.css" />
+    <link rel="stylesheet" href="../styles/components/Avatar.css" />
+    <link rel="stylesheet" href="../styles/components/Movie-card.css" />
+    <link rel="stylesheet" href="../styles/watchlist.css" />
+
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/pages/watchlist.js" defer></script>
+  </head>
+
+  <body>
+    <header class="navbar" role="banner">
+      <a href="../index.html" class="logo" aria-label="MovieSpace — Home">
+        <img
+          class="logo-img"
+          src="../assets/images/logo.png"
+          alt="MovieSpace"
+        />
+      </a>
+
+      <nav class="navbar-nav" aria-label="Main navigation">
+        <a href="../index.html" class="nav-link">All Films</a>
+
+        <a
+          href="watchlist.html"
+          class="nav-link nav-link--active"
+          aria-current="page"
+          data-js="nav-watchlist"
+        >
+          My Watchlists
+        </a>
+
+        <a href="login.html" class="btn btn-accent hidden" data-js="nav-login">
+          Login
+        </a>
+
+        <div
+          class="avatar"
+          data-js="nav-avatar"
+          aria-label="User menu"
+          role="button"
+          tabindex="0"
+        >
+          AL
+        </div>
+      </nav>
+    </header>
+
+    <main class="container watchlist-main" id="main-content">
+      <h1 class="watchlist-title">
+        My Watchlists (
+        <span data-js="watchlist-count">1</span> )
+      </h1>
+      <div class="watchlist-empty" data-js="watchlist-empty" aria-live="polite">
+        <p class="watchlist-empty-text">Belum ada film di watchlist kamu.</p>
+        <a href="../index.html" class="btn btn-accent">Browse Films</a>
+      </div>
+      <ul
+        class="movie-list"
+        data-js="watchlist-list"
+        aria-label="Daftar watchlist"
+      >
+        <li>
+          <article class="movie-card" data-film-id="1">
+            <img
+              class="movie-card-poster"
+              src="../assets/images/rrr.png"
+              alt="Poster film RRR"
+              width="150"
+              height="225"
+            />
+
+            <div class="movie-card-body">
+              <h2 class="movie-card-title">RRR</h2>
+
+              <div class="imdb-rating">
+                <img
+                  class="imdb-badge"
+                  src="../assets/images/IMDB_Logo.png"
+                  alt="IMDb"
+                />
+                <span class="imdb-score">9.9</span>
+                <img
+                  class="imdb-star"
+                  src="../assets/icons/star-icon.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+
+              <p class="movie-card-desc">
+                It centers around two real-life Indian revolutionaries, Alluri
+                Sitarama Raju (Charan) and Komaram Bheem (Rama Rao), their
+                fictional friendship and their fight against the British Raj.
+              </p>
+
+              <div class="movie-card-actions">
+                <a href="movie-detail.html?id=1" class="btn btn-outline">
+                  View Details
+                </a>
+                <button
+                  class="btn btn-outline"
+                  type="button"
+                  data-js="btn-remove-watchlist"
+                  data-film-id="1"
+                >
+                  Remove from Watchlists
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
