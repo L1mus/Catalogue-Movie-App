@@ -80,6 +80,7 @@
   --clr-grey-dim: hsl(0, 0%, 35%);
   --clr-orange: hsl(36, 100%, 50%);
   --clr-orange-dim: hsl(36, 100%, 40%);
+  --clr-blue: hsla(231, 48%, 48%, 1);
   --clr-error: hsl(8, 85%, 55%);
 
   /* Border */
@@ -112,6 +113,7 @@
   /* Font Weight */
   --fw-regular: 400;
   --fw-medium: 500;
+  --fw-semibold: 600;
   --fw-bold: 700;
 
   /* Letter Spacing */
@@ -351,7 +353,7 @@ body {
 
 /* Visibility */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .sr-only {
