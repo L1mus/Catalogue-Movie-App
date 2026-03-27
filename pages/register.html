@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/components/navbar.css" />
+    <link rel="stylesheet" href="../styles/components/button.css" />
+    <link rel="stylesheet" href="../styles/components/form.css" />
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/pages/register.js" defer></script>
+  </head>
+
+  <body>
+    <header class="navbar" role="banner">
+      <a href="../index.html" class="logo" aria-label="MovieSpace — Home">
+        <img
+          class="logo-img"
+          src="../assets/images/logo.png"
+          alt="MovieSpace"
+        />
+      </a>
+
+      <nav class="navbar-nav" aria-label="Main navigation">
+        <a href="../index.html" class="nav-link">All Films</a>
+        <a href="login.html" class="btn btn-accent">Login</a>
+      </nav>
+    </header>
+
+    <main class="auth-page" id="main-content">
+      <div class="auth-card">
+        <a href="../index.html" class="logo" aria-label="MovieSpace — Home">
+          <img
+            class="logo-img"
+            src="../assets/images/logo.png"
+            alt="MovieSpace"
+          />
+        </a>
+
+        <form
+          class="auth-form"
+          id="register-form"
+          data-js="register-form"
+          novalidate
+          aria-label="Register form"
+        >
+          <div class="form-field">
+            <label for="email" class="sr-only">Email</label>
+            <input
+              class="form-input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              autocomplete="email"
+              required
+              aria-required="true"
+              aria-describedby="email-error"
+              aria-invalid="false"
+              data-js="input-email"
+            />
+            <span
+              class="form-field-error"
+              id="email-error"
+              role="alert"
+              aria-live="polite"
+              data-js="error-email"
+            ></span>
+          </div>
+
+          <div class="form-field">
+            <label for="password" class="sr-only">Password</label>
+            <input
+              class="form-input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="new-password"
+              required
+              aria-required="true"
+              aria-describedby="password-error"
+              aria-invalid="false"
+              data-js="input-password"
+            />
+            <span
+              class="form-field-error"
+              id="password-error"
+              role="alert"
+              aria-live="polite"
+              data-js="error-password"
+            ></span>
+          </div>
+
+          <div class="form-field">
+            <label for="confirm-password" class="sr-only"
+              >Confirm Password</label
+            >
+            <input
+              class="form-input"
+              type="password"
+              id="confirm-password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              autocomplete="new-password"
+              required
+              aria-required="true"
+              aria-describedby="confirm-password-error"
+              aria-invalid="false"
+              data-js="input-confirm-password"
+            />
+            <span
+              class="form-field-error"
+              id="confirm-password-error"
+              role="alert"
+              aria-live="polite"
+              data-js="error-confirm-password"
+            ></span>
+          </div>
+
+          <button
+            class="btn btn-accent btn-full"
+            type="submit"
+            data-js="btn-register"
+          >
+            Signup
+          </button>
+
+          <p class="auth-link">
+            Registered user?
+            <a href="login.html" class="auth-link-cta">Login Here</a>
+          </p>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
