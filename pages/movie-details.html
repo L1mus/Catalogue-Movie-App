@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Detail</title>
+
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/components/Navbar.css" />
+    <link rel="stylesheet" href="../styles/components/Button.css" />
+    <link rel="stylesheet" href="../styles/components/Badge.css" />
+    <link rel="stylesheet" href="../styles/components/Imbd-rating.css" />
+    <link rel="stylesheet" href="../styles/components/Avatar.css" />
+    <link rel="stylesheet" href="../styles/components/Breadcrumb.css" />
+    <link rel="stylesheet" href="../styles/movie-details.css" />
+
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/pages/movie-detail.js" defer></script>
+  </head>
+
+  <body>
+    <header class="navbar" role="banner">
+      <a href="../index.html" class="logo" aria-label="MovieSpace — Home">
+        <img
+          class="logo-img"
+          src="../assets/images/logo.png"
+          alt="MovieSpace"
+        />
+      </a>
+
+      <nav class="navbar-nav" aria-label="Main navigation">
+        <a href="../index.html" class="nav-link">All Films</a>
+
+        <a
+          href="watchlist.html"
+          class="nav-link hidden"
+          data-js="nav-watchlist"
+        >
+          My Watchlists
+        </a>
+
+        <a href="login.html" class="btn btn-accent" data-js="nav-login">
+          Login
+        </a>
+
+        <div
+          class="avatar hidden"
+          data-js="nav-avatar"
+          aria-label="User menu"
+          role="button"
+          tabindex="0"
+        ></div>
+      </nav>
+    </header>
+
+    <main class="container detail-main" id="main-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a class="breadcrumb-item" href="../index.html">All Films</a>
+        <span class="breadcrumb-slash" aria-hidden="true">/</span>
+        <span
+          class="breadcrumb-item breadcrumb-item-current"
+          aria-current="page"
+          data-js="breadcrumb-title"
+        ></span>
+      </nav>
+
+      <div class="detail-layout">
+        <div class="detail-poster">
+          <img
+            src="../assets/images/rrr.png"
+            alt="Poster film RRR"
+            width="225"
+            height="338"
+            data-js="detail-poster"
+          />
+        </div>
+
+        <div class="detail-info">
+          <div class="badge-group" data-js="detail-genres">
+            <span class="badge">Action</span>
+            <span class="badge">Fiction</span>
+            <span class="badge">Golden Globe Winner</span>
+          </div>
+
+          <h1 class="detail-title" data-js="detail-title">RRR</h1>
+
+          <div class="imdb-rating">
+            <img
+              class="imdb-badge"
+              src="../assets/images/IMDB_Logo.png"
+              alt="IMDb"
+            />
+            <span class="imdb-score" data-js="detail-score">9.9</span>
+            <img
+              class="imdb-star"
+              src="../assets/icons/star-icon.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+
+          <p class="detail-desc" data-js="detail-desc">
+            It centers around two real-life Indian revolutionaries, Alluri
+            Sitarama Raju (Charan) and Komaram Bheem (Rama Rao), their fictional
+            friendship and their fight against the British Raj.
+          </p>
+
+          <p class="detail-meta" data-js="detail-director">
+            Director : S.S. Rajamouli
+          </p>
+
+          <p class="detail-meta" data-js="detail-cast">
+            Cast : Jr NTR, Ram Charan, Alia Bhatt
+          </p>
+
+          <div class="detail-actions">
+            <a
+              href="#"
+              class="btn btn-outline hidden"
+              data-js="btn-trailer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch Trailer
+            </a>
+
+            <button
+              class="btn btn-outline"
+              type="button"
+              data-js="btn-watchlist"
+              data-film-id="1"
+              data-in-watchlist="false"
+            >
+              Add to Watchlist
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
