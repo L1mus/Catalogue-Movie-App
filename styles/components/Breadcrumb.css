@@ -1,0 +1,26 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+
+  & .breadcrumb-item {
+    font-size: var(--fs-sm);
+    color: var(--clr-grey);
+    transition: color var(--transition-fast);
+
+    &-current {
+      color: var(--clr-white);
+      pointer-events: none;
+    }
+
+    &:not(.breadcrumb-item-current):hover {
+      color: var(--clr-white);
+    }
+  }
+
+  & .breadcrumb-slash {
+    font-size: var(--fs-sm);
+    color: var(--clr-grey);
+  }
+}
