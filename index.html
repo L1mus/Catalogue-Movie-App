@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Films</title>
+
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/components/Navbar.css" />
+    <link rel="stylesheet" href="styles/components/Button.css" />
+    <link rel="stylesheet" href="styles/components/Badge.css" />
+    <link rel="stylesheet" href="styles/components/Imbd-rating.css" />
+    <link rel="stylesheet" href="styles/components/Avatar.css" />
+    <link rel="stylesheet" href="styles/components/Movie-card.css" />
+    <link rel="stylesheet" href="styles/components/Filter.css" />
+    <link rel="stylesheet" href="styles/components/Pagination.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/pages/films.js" defer></script>
+  </head>
+
+  <body>
+    <header class="navbar" role="banner">
+      <a href="index.html" class="logo" aria-label="MovieSpace — Home">
+        <img class="logo-img" src="assets/images/logo.png" alt="MovieSpace" />
+      </a>
+
+      <nav class="navbar-nav" aria-label="Main navigation">
+        <a
+          href="index.html"
+          class="nav-link nav-link--active"
+          aria-current="page"
+        >
+          All Films
+        </a>
+
+        <a
+          href="pages/watchlist.html"
+          class="nav-link hidden"
+          data-js="nav-watchlist"
+        >
+          My Watchlists
+        </a>
+
+        <a href="pages/login.html" class="btn btn-accent" data-js="nav-login">
+          Login
+        </a>
+
+        <div
+          class="avatar"
+          data-js="nav-avatar"
+          aria-label="User menu"
+          role="button"
+          tabindex="0"
+        >
+          AL
+        </div>
+      </nav>
+    </header>
+
+    <main class="container films-main" id="main-content">
+      <h1 class="films-title">
+        All Films (
+        <span data-js="film-count">1</span> )
+      </h1>
+
+      <div class="filter-bar">
+        <button
+          class="filter-btn"
+          type="button"
+          data-js="btn-genre"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+        >
+          Genre
+          <img
+            class="filter-btn-icon"
+            src="assets/icons/arrow_drop_down.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
+
+        <button
+          class="filter-btn"
+          type="button"
+          data-js="btn-sort-imdb"
+          aria-pressed="false"
+        >
+          Sort by IMDb
+          <img
+            class="filter-btn-icon"
+            src="assets/icons/swap_vert.svg"
+            alt=""
+            aria-hidden="true"
+            data-js="sort-icon"
+          />
+        </button>
+      </div>
+
+      <ul class="movie-list" data-js="film-list" aria-label="Daftar film">
+        <li>
+          <article class="movie-card" data-film-id="1">
+            <img
+              class="movie-card-poster"
+              src="assets/images/rrr.png"
+              alt="Poster film RRR"
+            />
+
+            <div class="movie-card-body">
+              <h2 class="movie-card-title">RRR</h2>
+
+              <div class="badge-group">
+                <span class="badge">Action</span>
+                <span class="badge">Fiction</span>
+                <span class="badge">Golden Globe Winner</span>
+              </div>
+
+              <div class="imdb-rating">
+                <img
+                  class="imdb-badge"
+                  src="assets/images/IMDB_Logo.png"
+                  alt="IMDb"
+                />
+                <span class="imdb-score">9.9</span>
+                <img
+                  class="imdb-star"
+                  src="assets/icons/star-icon.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+
+              <p class="movie-card-desc">
+                It centers around two real-life Indian revolutionaries, Alluri
+                Sitarama Raju (Charan) and Komaram Bheem (Rama Rao), their
+                fictional friendship and their fight against the British Raj.
+              </p>
+
+              <div class="movie-card-actions">
+                <a href="pages/movie-detail.html?id=1" class="btn btn-outline">
+                  View Details
+                </a>
+                <button
+                  class="btn btn-outline"
+                  type="button"
+                  data-js="btn-watchlist"
+                  data-film-id="1"
+                  data-in-watchlist="false"
+                >
+                  Add to Watchlists
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+
+      <div class="pagination" data-js="pagination">
+        <span class="pagination-info">
+          Items per page:
+          <span data-js="per-page">10</span>
+        </span>
+
+        <span class="pagination-range" data-js="pagination-range"
+          >1 - 10 of 100</span
+        >
+
+        <button
+          class="pagination-btn"
+          type="button"
+          data-js="btn-prev"
+          aria-label="Halaman sebelumnya"
+          disabled
+        >
+          &#8249;
+        </button>
+
+        <button
+          class="pagination-btn"
+          type="button"
+          data-js="btn-next"
+          aria-label="Halaman berikutnya"
+        >
+          &#8250;
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
