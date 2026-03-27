@@ -1,0 +1,24 @@
+.imdb-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+
+  & .imdb-badge {
+    height: 16px;
+    width: auto;
+    display: block;
+  }
+
+  & .imdb-score {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-regular);
+    color: var(--clr-grey);
+    margin-top: 4px;
+  }
+
+  & .imdb-star {
+    height: 16px;
+    width: 16px;
+    display: block;
+  }
+}

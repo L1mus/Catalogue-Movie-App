@@ -1,0 +1,18 @@
+.avatar {
+  background-color: var(--clr-blue);
+  color: var(--clr-white);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-tight);
+  flex-shrink: 0;
+  user-select: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
