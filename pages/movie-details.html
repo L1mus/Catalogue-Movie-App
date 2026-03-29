@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="../styles/components/Avatar.css" />
     <link rel="stylesheet" href="../styles/components/Breadcrumb.css" />
     <link rel="stylesheet" href="../styles/movie-details.css" />
-
-    <script src="../scripts/main.js" defer></script>
-    <script src="../scripts/pages/movie-detail.js" defer></script>
+    <script src="scripts/main.js" type="module" defer></script>
+    <script
+      src="../scripts/pages/movie-details.js"
+      type="module"
+      defer
+    ></script>
   </head>
 
   <body>
@@ -64,78 +67,7 @@
         ></span>
       </nav>
 
-      <div class="detail-layout">
-        <div class="detail-poster">
-          <img
-            src="../assets/images/rrr.png"
-            alt="Poster film RRR"
-            width="225"
-            height="338"
-            data-js="detail-poster"
-          />
-        </div>
-
-        <div class="detail-info">
-          <div class="badge-group" data-js="detail-genres">
-            <span class="badge">Action</span>
-            <span class="badge">Fiction</span>
-            <span class="badge">Golden Globe Winner</span>
-          </div>
-
-          <h1 class="detail-title" data-js="detail-title">RRR</h1>
-
-          <div class="imdb-rating">
-            <img
-              class="imdb-badge"
-              src="../assets/images/IMDB_Logo.png"
-              alt="IMDb"
-            />
-            <span class="imdb-score" data-js="detail-score">9.9</span>
-            <img
-              class="imdb-star"
-              src="../assets/icons/star-icon.svg"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-
-          <p class="detail-desc" data-js="detail-desc">
-            It centers around two real-life Indian revolutionaries, Alluri
-            Sitarama Raju (Charan) and Komaram Bheem (Rama Rao), their fictional
-            friendship and their fight against the British Raj.
-          </p>
-
-          <p class="detail-meta" data-js="detail-director">
-            Director : S.S. Rajamouli
-          </p>
-
-          <p class="detail-meta" data-js="detail-cast">
-            Cast : Jr NTR, Ram Charan, Alia Bhatt
-          </p>
-
-          <div class="detail-actions">
-            <a
-              href="#"
-              class="btn btn-outline hidden"
-              data-js="btn-trailer"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Watch Trailer
-            </a>
-
-            <button
-              class="btn btn-outline"
-              type="button"
-              data-js="btn-watchlist"
-              data-film-id="1"
-              data-in-watchlist="false"
-            >
-              Add to Watchlist
-            </button>
-          </div>
-        </div>
-      </div>
+      <div class="detail-layout" data-js="detail-film"></div>
     </main>
   </body>
 </html>
