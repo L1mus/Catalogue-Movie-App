@@ -15,9 +15,8 @@
     <link rel="stylesheet" href="styles/components/Filter.css" />
     <link rel="stylesheet" href="styles/components/Pagination.css" />
     <link rel="stylesheet" href="styles/index.css" />
-
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/pages/films.js" defer></script>
+    <script src="scripts/main.js" type="module" defer></script>
+    <script src="scripts/pages/films.js" type="module" defer></script>
   </head>
 
   <body>
@@ -48,21 +47,19 @@
         </a>
 
         <div
-          class="avatar"
+          class="avatar hidden"
           data-js="nav-avatar"
           aria-label="User menu"
           role="button"
           tabindex="0"
-        >
-          AL
-        </div>
+        ></div>
       </nav>
     </header>
 
     <main class="container films-main" id="main-content">
       <h1 class="films-title">
         All Films (
-        <span data-js="film-count">1</span> )
+        <span data-js="film-count">0</span> )
       </h1>
 
       <div class="filter-bar">
@@ -99,63 +96,7 @@
         </button>
       </div>
 
-      <ul class="movie-list" data-js="film-list" aria-label="Daftar film">
-        <li>
-          <article class="movie-card" data-film-id="1">
-            <img
-              class="movie-card-poster"
-              src="assets/images/rrr.png"
-              alt="Poster film RRR"
-            />
-
-            <div class="movie-card-body">
-              <h2 class="movie-card-title">RRR</h2>
-
-              <div class="badge-group">
-                <span class="badge">Action</span>
-                <span class="badge">Fiction</span>
-                <span class="badge">Golden Globe Winner</span>
-              </div>
-
-              <div class="imdb-rating">
-                <img
-                  class="imdb-badge"
-                  src="assets/images/IMDB_Logo.png"
-                  alt="IMDb"
-                />
-                <span class="imdb-score">9.9</span>
-                <img
-                  class="imdb-star"
-                  src="assets/icons/star-icon.svg"
-                  alt=""
-                  aria-hidden="true"
-                />
-              </div>
-
-              <p class="movie-card-desc">
-                It centers around two real-life Indian revolutionaries, Alluri
-                Sitarama Raju (Charan) and Komaram Bheem (Rama Rao), their
-                fictional friendship and their fight against the British Raj.
-              </p>
-
-              <div class="movie-card-actions">
-                <a href="pages/movie-detail.html?id=1" class="btn btn-outline">
-                  View Details
-                </a>
-                <button
-                  class="btn btn-outline"
-                  type="button"
-                  data-js="btn-watchlist"
-                  data-film-id="1"
-                  data-in-watchlist="false"
-                >
-                  Add to Watchlists
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-      </ul>
+      <ul class="movie-list" data-js="film-list" aria-label="Daftar film"></ul>
 
       <div class="pagination" data-js="pagination">
         <span class="pagination-info">
