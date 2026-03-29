@@ -10,6 +10,48 @@
   }
 }
 
+.filter-genre-wrap {
+  position: relative;
+}
+
+.genre-dropdown {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  z-index: 50;
+
+  background-color: var(--clr-black-soft);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) 0;
+
+  max-height: 280px;
+  overflow-y: auto;
+  min-width: 160px;
+
+  & .genre-item {
+    display: block;
+    width: 100%;
+    padding: var(--space-2) var(--space-4);
+    background: none;
+    border: none;
+    color: var(--clr-white);
+    font-size: var(--fs-sm);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+
+    &:hover {
+      background-color: var(--clr-black);
+    }
+
+    &.active {
+      color: var(--clr-orange);
+      font-weight: var(--fw-bold);
+    }
+  }
+}
+
 .filter-btn {
   display: inline-flex;
   align-items: center;
