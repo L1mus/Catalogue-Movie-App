@@ -43,4 +43,12 @@
       filter: invert(1);
     }
   }
+
+  &.active {
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+    & .filter-btn-icon {
+      filter: invert(1);
+    }
+  }
 }
