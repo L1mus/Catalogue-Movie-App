@@ -63,21 +63,28 @@
       </h1>
 
       <div class="filter-bar">
-        <button
-          class="filter-btn"
-          type="button"
-          data-js="btn-genre"
-          aria-haspopup="listbox"
-          aria-expanded="false"
-        >
-          Genre
-          <img
-            class="filter-btn-icon"
-            src="assets/icons/arrow_drop_down.svg"
-            alt=""
-            aria-hidden="true"
-          />
-        </button>
+        <div class="filter-genre-wrap">
+          <button
+            class="filter-btn"
+            type="button"
+            data-js="btn-genre"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            Genre
+            <img
+              class="filter-btn-icon"
+              src="assets/icons/arrow_drop_down.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+          <ul
+            class="genre-dropdown hidden"
+            data-js="genre-dropdown"
+            role="listbox"
+          ></ul>
+        </div>
 
         <button
           class="filter-btn"
