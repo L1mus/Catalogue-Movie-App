@@ -100,3 +100,47 @@ export const fetchDetailFilm = async (movie_id) => {
     throw error;
   }
 };
+
+export const fetchGenres = async () => {
+  try {
+    const response = await fetch(
+      `${configAPI.baseUrl}/genre/movie/list?language=en-US`,
+      options,
+    );
+
+    if (!response.ok) {
+      throw new Error(`Failed fetch genres: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return data.genres;
+  } catch (error) {
+    console.error("fetchGenres error:", error.message);
+    throw error;
+  }
+};
+
+export const fetchFilmsByGenre = async (genreId, page = 1) => {
+  try {
+    const response = await fetch(
+      `${configAPI.baseUrl}/discover/movie?with_genres=${genreId}&language=en-US&page=${page}`,
+      options,
+    );
+
+    if (!response.ok) {
+      throw new Error(`Failed fetch films by genre: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return {
+      films: data.results,
+      totalPages: data.total_pages,
+      totalResults: data.total_results,
+    };
+  } catch (error) {
+    console.error("fetchFilmsByGenre error:", error.message);
+    throw error;
+  }
+};
