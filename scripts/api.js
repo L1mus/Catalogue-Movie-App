@@ -23,13 +23,13 @@ export const fetchFilms = async (page = 1) => {
 };
 
 export const buildImgUrl = (posterPath) => {
-  return `https://image.tmdb.org/t/p/w500{posterPath}`;
+  return `https://image.tmdb.org/t/p/w500${posterPath}`;
 };
 
 export const fetchFilmsSortByImbd = async (page = 1) => {
   try {
     const response = await fetch(
-      `${configAPI.baseUrl}/movie/top_rated?language=en-US&page=${page}`,
+      `/api/tmdb?endpoint=/movie/top_rated?language=en-US&page=${page}`,
       options,
     );
 
@@ -64,7 +64,7 @@ export const fetchDetailFilm = async (movie_id) => {
     const dataDetailFilm = await responseDetailFilm.json();
 
     const responseCredits = await fetch(
-      `${configAPI.baseUrl}/movie/${movie_id}/credits`,
+      `/api/tmdb?endpoint=/movie/${movie_id}/credits`,
       options,
     );
 
