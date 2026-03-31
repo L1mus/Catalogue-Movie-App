@@ -2,7 +2,6 @@ export const fetchFilms = async (page = 1) => {
   try {
     const response = await fetch(
       `/api/tmdb?endpoint=/movie/now_playing?language=en-US&page=${page}`,
-      options,
     );
 
     if (!response.ok) {
@@ -30,7 +29,6 @@ export const fetchFilmsSortByImbd = async (page = 1) => {
   try {
     const response = await fetch(
       `/api/tmdb?endpoint=/movie/top_rated?language=en-US&page=${page}`,
-      options,
     );
 
     if (!response.ok) {
@@ -54,7 +52,6 @@ export const fetchDetailFilm = async (movie_id) => {
   try {
     const responseDetailFilm = await fetch(
       `/api/tmdb?endpoint=/movie/${movie_id}`,
-      options,
     );
 
     if (!responseDetailFilm.ok) {
@@ -65,7 +62,6 @@ export const fetchDetailFilm = async (movie_id) => {
 
     const responseCredits = await fetch(
       `/api/tmdb?endpoint=/movie/${movie_id}/credits`,
-      options,
     );
 
     if (!responseCredits.ok) {
@@ -95,7 +91,6 @@ export const fetchGenres = async () => {
   try {
     const response = await fetch(
       `/api/tmdb?endpoint=/genre/movie/list?language=en-US`,
-      options,
     );
 
     if (!response.ok) {
@@ -115,7 +110,6 @@ export const fetchFilmsByGenre = async (genreId, page = 1) => {
   try {
     const response = await fetch(
       `/api/tmdb?endpoint=/discover/movie?with_genres=${genreId}&language=en-US&page=${page}`,
-      options,
     );
 
     if (!response.ok) {
