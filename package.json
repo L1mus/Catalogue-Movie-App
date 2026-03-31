@@ -1,0 +1,26 @@
+{
+  "name": "catalogue-movie-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/scripts/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind-watch": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/L1mus/Catalogue-Movie-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/L1mus/Catalogue-Movie-App/issues"
+  },
+  "homepage": "https://github.com/L1mus/Catalogue-Movie-App#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
