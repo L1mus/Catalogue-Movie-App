@@ -1,17 +1,7 @@
-import { configAPI } from "../env.js";
-
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization: `Bearer ${configAPI.accessToken}`,
-  },
-};
-
 export const fetchFilms = async (page = 1) => {
   try {
     const response = await fetch(
-      `${configAPI.baseUrl}/movie/now_playing?language=en-US&page=${page}`,
+      `/api/tmdb?endpoint=/movie/now_playing?language=en-US&page=${page}`,
       options,
     );
 
@@ -33,7 +23,7 @@ export const fetchFilms = async (page = 1) => {
 };
 
 export const buildImgUrl = (posterPath) => {
-  return `${configAPI.imgBaseUrl}${posterPath}`;
+  return `https://image.tmdb.org/t/p/w500{posterPath}`;
 };
 
 export const fetchFilmsSortByImbd = async (page = 1) => {
@@ -63,7 +53,7 @@ export const fetchFilmsSortByImbd = async (page = 1) => {
 export const fetchDetailFilm = async (movie_id) => {
   try {
     const responseDetailFilm = await fetch(
-      `${configAPI.baseUrl}/movie/${movie_id}`,
+      `/api/tmdb?endpoint=/movie/${movie_id}`,
       options,
     );
 
@@ -104,7 +94,7 @@ export const fetchDetailFilm = async (movie_id) => {
 export const fetchGenres = async () => {
   try {
     const response = await fetch(
-      `${configAPI.baseUrl}/genre/movie/list?language=en-US`,
+      `/api/tmdb?endpoint=/genre/movie/list?language=en-US`,
       options,
     );
 
@@ -124,7 +114,7 @@ export const fetchGenres = async () => {
 export const fetchFilmsByGenre = async (genreId, page = 1) => {
   try {
     const response = await fetch(
-      `${configAPI.baseUrl}/discover/movie?with_genres=${genreId}&language=en-US&page=${page}`,
+      `/api/tmdb?endpoint=/discover/movie?with_genres=${genreId}&language=en-US&page=${page}`,
       options,
     );
 
