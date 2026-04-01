@@ -1,5 +1,78 @@
 @import "tailwindcss";
 
+/* Roboto-100 */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../assets/fonts/roboto-100.woff2") format("woff2");
+}
+/* Roboto-200 */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/roboto-200.woff2") format("woff2");
+}
+/* Roboto-300 */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/roboto-300.woff2") format("woff2");
+}
+/* roboRo-regular */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/roboto-regular.woff2") format("woff2");
+}
+/* Roboto-500 */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/roboto-500.woff2") format("woff2");
+}
+/* Roboto-600 */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/roboto-600.woff2") format("woff2");
+}
+/* Roboto-700 */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/roboto-700.woff2") format("woff2");
+}
+/* Roboto-800 */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/roboto-800.woff2") format("woff2");
+}
+/* Roboto-900 */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../assets/fonts/roboto-900.woff2") format("woff2");
+}
+
 :root {
   --clr-black: hsl(0, 0%, 15%);
   --clr-black-soft: hsl(0, 0%, 8%);
