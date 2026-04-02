@@ -22,6 +22,8 @@
   "homepage": "https://github.com/L1mus/Catalogue-Movie-App#readme",
   "dependencies": {
     "@tailwindcss/cli": "^4.2.2",
-    "tailwindcss": "^4.2.2"
+    "dotenv": "^17.4.0",
+    "tailwindcss": "^4.2.2",
+    "vercel": "^50.38.2"
   }
 }

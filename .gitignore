@@ -4,3 +4,6 @@ node_modules/
 dist/
 public/build/
 src/output.css
+.vercel
+.env*.local
+.vercel/

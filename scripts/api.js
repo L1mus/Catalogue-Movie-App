@@ -1,7 +1,7 @@
 export const fetchFilms = async (page = 1) => {
   try {
     const response = await fetch(
-      `/api/tmdb?endpoint=/movie/now_playing?language=en-US&page=${page}`,
+      `/api/tmdb?endpoint=/discover/movie?language=en-US&page=${page}`,
     );
 
     if (!response.ok) {
@@ -12,8 +12,8 @@ export const fetchFilms = async (page = 1) => {
 
     return {
       films: data.results,
-      totalPages: data.total_pages,
-      totalResults: data.total_results,
+      totalPages: 10,
+      totalResults: 200,
     };
   } catch (error) {
     console.error("fetchMovies error:", error.message);
@@ -39,8 +39,8 @@ export const fetchFilmsSortByImbd = async (page = 1) => {
 
     return {
       films: data.results,
-      totalPages: data.total_pages,
-      totalResults: data.total_results,
+      totalPages: 10,
+      totalResults: 200,
     };
   } catch (error) {
     console.error("fetchMovies error:", error.message);
@@ -109,19 +109,22 @@ export const fetchGenres = async () => {
 export const fetchFilmsByGenre = async (genreId, page = 1) => {
   try {
     const response = await fetch(
-      `/api/tmdb?endpoint=/discover/movie?with_genres=${genreId}&language=en-US&page=${page}`,
+      `/api/tmdb?endpoint=/discover/movie?genres=${genreId}&language=en-US&page=${page}`,
     );
+
+    console.log(response.status);
 
     if (!response.ok) {
       throw new Error(`Failed fetch films by genre: ${response.status}`);
     }
 
     const data = await response.json();
+    console.log(data);
 
     return {
       films: data.results,
-      totalPages: data.total_pages,
-      totalResults: data.total_results,
+      totalPages: 10,
+      totalResults: 200,
     };
   } catch (error) {
     console.error("fetchFilmsByGenre error:", error.message);

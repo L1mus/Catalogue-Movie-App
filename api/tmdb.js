@@ -1,4 +1,4 @@
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   const { endpoint, ...queryParams } = req.query;
 
   if (!endpoint) {
@@ -23,4 +23,4 @@ module.exports = async function handler(req, res) {
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
-};
+}
