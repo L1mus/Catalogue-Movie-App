@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@source "../index.html";
+@source "../pages/**/*.html";
+@source "../scripts/**/*.js";
+
 /* Roboto-100 */
 @font-face {
   font-display: swap;
