@@ -63,7 +63,7 @@ const renderDetail = async (id) => {
 
           <p class="detail-meta" data-js="detail-director">
             Director : <span >${data.crew
-              .filter((i) => i.job === "Producer")
+              .filter((i) => i.job === "Director")
               .map((c) => c.name)
               .join(", ")}</span>
           </p>

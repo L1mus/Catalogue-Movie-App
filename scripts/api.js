@@ -1,7 +1,7 @@
 export const fetchFilms = async (page = 1) => {
   try {
     const response = await fetch(
-      `/api/tmdb?endpoint=/discover/movie?language=en-US&page=${page}`,
+      `/api/tmdb?endpoint=/discover/movie&language=en-US&page=${page}`,
     );
 
     if (!response.ok) {
@@ -12,8 +12,8 @@ export const fetchFilms = async (page = 1) => {
 
     return {
       films: data.results,
-      totalPages: 10,
-      totalResults: 200,
+      totalPages: data.total_pages > 10 ? 10 : data.total_pages,
+      totalResults: data.total_results,
     };
   } catch (error) {
     console.error("fetchMovies error:", error.message);
@@ -28,7 +28,7 @@ export const buildImgUrl = (posterPath) => {
 export const fetchFilmsSortByImbd = async (page = 1) => {
   try {
     const response = await fetch(
-      `/api/tmdb?endpoint=/movie/top_rated?language=en-US&page=${page}`,
+      `/api/tmdb?endpoint=/movie/top_rated&language=en-US&page=${page}`,
     );
 
     if (!response.ok) {
@@ -39,8 +39,8 @@ export const fetchFilmsSortByImbd = async (page = 1) => {
 
     return {
       films: data.results,
-      totalPages: 10,
-      totalResults: 200,
+      totalPages: data.total_pages > 10 ? 10 : data.total_pages,
+      totalResults: data.total_results,
     };
   } catch (error) {
     console.error("fetchMovies error:", error.message);
@@ -90,7 +90,7 @@ export const fetchDetailFilm = async (movie_id) => {
 export const fetchGenres = async () => {
   try {
     const response = await fetch(
-      `/api/tmdb?endpoint=/genre/movie/list?language=en-US`,
+      `/api/tmdb?endpoint=/genre/movie/list&language=en-US`,
     );
 
     if (!response.ok) {
@@ -109,7 +109,7 @@ export const fetchGenres = async () => {
 export const fetchFilmsByGenre = async (genreId, page = 1) => {
   try {
     const response = await fetch(
-      `/api/tmdb?endpoint=/discover/movie?genres=${genreId}&language=en-US&page=${page}`,
+      `/api/tmdb?endpoint=/discover/movie&with_genres=${genreId}&language=en-US&page=${page}`,
     );
 
     console.log(response.status);
@@ -123,8 +123,8 @@ export const fetchFilmsByGenre = async (genreId, page = 1) => {
 
     return {
       films: data.results,
-      totalPages: 10,
-      totalResults: 200,
+      totalPages: data.total_pages > 10 ? 10 : data.total_pages,
+      totalResults: data.total_results,
     };
   } catch (error) {
     console.error("fetchFilmsByGenre error:", error.message);
